@@ -6,7 +6,7 @@ $controller .= "controller";
 
 const FOLDER = "aula3";
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/'.FOLDER. '/aula3/controller/EstudanteController.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/'.FOLDER. '/controller/EstudanteController.php';
 
 $objeto = new $controller();
 $objeto->$metodo();
