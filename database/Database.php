@@ -1,6 +1,5 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] .'/'.FOLDER. '/aula3/model/Database.php';
 
 class Database {
     private string $servername;

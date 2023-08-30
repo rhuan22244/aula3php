@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/aula3/model/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/'.FOLDER. '/database/Database.php';
 
 
 class EstudanteModel {
