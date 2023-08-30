@@ -1,14 +1,12 @@
-<?php $listaEstudantes = $_REQUEST["estudantes"]; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Estudantes</title>
+    <title>cadastro de alunos</title>
 </head>
+
 <body>
       <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
@@ -36,36 +34,19 @@
         </div>
       </nav>
     <div class="container">
-        <div class="row text-center">
-            <h2>semana da acessibilidade</h2>
+    <form method="POST" action="/aula3/?controller=Professor&acao=salvar">
+        <div class="mb-3">
+            <label for="nome" class="form-label">nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" >
         </div>
+        <div class="mb-3">
+            <label for="idade" class="form-label">idade</label>
+            <input type="number" class="form-control" id="idade" name="idade">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
-            <div class='d-flex justify-content-center'>
-                <img class="rounded" src="https://www.cnj.jus.br/wp-content/uploads/2022/09/tjsp-acessibilidade.png" alt="imagem de diversas pessoas com debilidades fisicas ou mentais uma ao lado da outra com o titulo semana da acessibilidade.">
-            </div>
-            <br>
-            <a href="/aula3/?controller=Estudante&acao=salvar" class="btn btn-success">cadastrar alunos</a>
-            <br>
-
-            <table class="table">
-                <thead>
-                    <br>
-                    <tr class="table-dark">
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Idade</th>
-                    </tr>
-                </thead>
-                <tbody class="table-dark">
-                <?php foreach ($listaEstudantes as $estudante) { ?>
-                        <tr>
-                            <td><?php echo $estudante["id"]; ?></td>
-                                <td><?php echo $estudante["nome"]; ?></td>
-                                <td><?php echo $estudante["idade"]; ?></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-            </div>
+    </div>
 </body>
+
 </html>

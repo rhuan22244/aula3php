@@ -1,4 +1,4 @@
-<?php $listaEstudantes = $_REQUEST["estudantes"]; ?>
+<?php $professores = $_REQUEST["professores"]; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Estudantes</title>
+    <title>lista de professores</title>
 </head>
 <body>
       <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
@@ -44,8 +44,9 @@
                 <img class="rounded" src="https://www.cnj.jus.br/wp-content/uploads/2022/09/tjsp-acessibilidade.png" alt="imagem de diversas pessoas com debilidades fisicas ou mentais uma ao lado da outra com o titulo semana da acessibilidade.">
             </div>
             <br>
-            <a href="/aula3/?controller=Estudante&acao=salvar" class="btn btn-success">cadastrar alunos</a>
+            <a href="/aula3/?controller=Professor&acao=salvar" class="btn btn-success">cadastrar professor</a>
             <br>
+            
 
             <table class="table">
                 <thead>
@@ -57,15 +58,15 @@
                     </tr>
                 </thead>
                 <tbody class="table-dark">
-                <?php foreach ($listaEstudantes as $estudante) { ?>
+                <?php foreach ($professores as $professorAtual) { ?>
                         <tr>
-                            <td><?php echo $estudante["id"]; ?></td>
-                                <td><?php echo $estudante["nome"]; ?></td>
-                                <td><?php echo $estudante["idade"]; ?></td>
+                            <td><?php echo $professorAtual["id"]; ?></td>
+                            <td><?php echo $professorAtual["nome"]; ?></td>
+                            <td><?php echo $professorAtual["idade"]; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            </div>
+    </div>
 </body>
 </html>
