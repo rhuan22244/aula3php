@@ -31,4 +31,37 @@ class ProfessorController {
 
 
     }
+    public function editar()
+    {
+        if($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $id = $_GET["id"];
+
+            $professorModel = new ProfessorModel();
+            $professor = $professorModel->buscarPeloID($id);
+
+            $_REQUEST['professor'] = $professor;
+
+
+            require_once $_SERVER['DOCUMENT_ROOT'] .'/'.FOLDER. '/view'. self::CONTROLLER_FOLDER. '/ProfessorFormEdit.php';
+        } elseif($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_GET["id"];
+            $nome = $_POST['nome'];
+            $idade = $_POST['idade'];
+    
+            $professorModel = new ProfessorModel();
+            $professorModel->atualizarModel($id,$nome,$idade);
+
+            header('location: http://localhost:8081/'. FOLDER .'/?controller=Professor&acao=listar');
+            exit();
+        }
+    }
+    public function excluir()
+    {
+        $id = $_GET["id"];
+        $professorModel = new ProfessorModel();
+        $professorModel->excluirModel($id);
+
+        header('location: http://localhost:8081/'. FOLDER .'/?controller=Professor&acao=listar');
+        exit();
+    }
 }

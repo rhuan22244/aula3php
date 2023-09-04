@@ -25,21 +25,27 @@
             <br>
             
 
-            <table class="table">
+            <table class="table table-dark">
                 <thead>
                     <br>
                     <tr class="table-dark">
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Idade</th>
+                    <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody class="table-dark">
                 <?php foreach ($professores as $professorAtual) { ?>
                         <tr>
-                            <td><?php echo $professorAtual["id"]; ?></td>
-                            <td><?php echo $professorAtual["nome"]; ?></td>
-                            <td><?php echo $professorAtual["idade"]; ?></td>
+                                <td><?php echo $professorAtual["id"]; ?></td>
+                                <td><?php echo $professorAtual["nome"]; ?></td>
+                                <td><?php echo $professorAtual["idade"]; ?></td>
+                                <td>
+                                  <a href="/<?php echo FOLDER; ?>?controller=Professor&acao=editar&id=<?php echo $professorAtual['id']; ?>" class="btn btn-primary">Editar</a>
+                                  <a href="/<?php echo FOLDER; ?>?controller=Professor&acao=excluir&id=<?php echo $professorAtual['id']; ?>" class="btn btn-primary">Excluir</a>
+
+                                </td>
                         </tr>
                     <?php } ?>
                 </tbody>
