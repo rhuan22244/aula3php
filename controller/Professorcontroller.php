@@ -64,4 +64,6 @@ class ProfessorController {
         header('location: http://localhost:8081/'. FOLDER .'/?controller=Professor&acao=listar');
         exit();
     }
+    
+    
 }

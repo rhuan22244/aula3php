@@ -22,6 +22,30 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <script>
+        $("#delete-button").on("click", function() {
+            let idUsuario = $(this).attr('data-id');
+
+            let url = "/<?php echo FOLDER; ?>/?controller=Estudante&acao=excluir&id=" + idUsuario;
+            $.get(url, function(data) {
+                $("#close-modal").click();
+                var myModal = new bootstrap.Modal(document.getElementById('userDeleted'))
+                myModal.show();
+
+            });
+            console.log("O usuario para ser deletado é: " + idUsuario);
+        });
+
+        $("#userDeleted").on("hidden.bs.modal", function() {
+            location.reload();
+        });
+
+        $(".select-user-to-delete").on("click", function() {
+
+            $("#delete-button").attr("data-id", $(this).attr('data-id'));
+            console.log("O usuário escolheu o estudante que talvez possa ser deletado");
+        });
+    </script>
 
     </div>
 </body>

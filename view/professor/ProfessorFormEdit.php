@@ -25,6 +25,9 @@
             <input type="number" class="form-control" id="idade" name="idade" value="<?php echo $professor["idade"];?>" >
         </div>
         <button type="submit" class="btn btn-primary">editar</button>
+        <button type="button" class="btn btn-primary select-user-to-delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?php echo $estudanteAtual['id']; ?>">
+            Excluir
+        </button>
     </form>
 
     </div>

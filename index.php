@@ -15,4 +15,5 @@ if(isset($_GET['controller'] ) && isset($_GET['acao'])){
 }else{
     require_once $_SERVER['DOCUMENT_ROOT'] . '/'.FOLDER. '/view/home.php';
 
-}
+}?>
+

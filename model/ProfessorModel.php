@@ -43,4 +43,5 @@ class ProfessorModel {
         $sql = "DELETE FROM professores WHERE id = '$id'";
         $this->database->insert($sql);
     }
+    
 }
